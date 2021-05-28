@@ -27,7 +27,13 @@ namespace EscrevendoNoCelular
                     pode = true;
             }
             if (pode)
+            {
                 mensagemConvertida = comandos.Converter(comando);
+                if (mensagemConvertida.Length > 255)
+                {
+                    mensagemConvertida = "NÃO É PERMITIDO MENSAGEM ACIMA DE 255 CARACTERES";
+                }
+            }
             else
                 mensagemConvertida = "HÁ UM COMANDO INVÁLIDO";
             return mensagemConvertida;
